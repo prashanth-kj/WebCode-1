@@ -1,6 +1,7 @@
-
+// select the container div
 let container = document.querySelector('.container');
 
+// create table from the Api
 function showTable(data) {
   let tableBody = document.querySelector("#mytable tbody");
   tableBody.innerHTML = '';
@@ -18,7 +19,7 @@ function showTable(data) {
     tableBody.appendChild(row);
   });
 }
-
+//create  card from the Api
 function getDetails(data) {
   let row = document.createElement('div');
   row.classList.add('row');
@@ -44,7 +45,7 @@ function getDetails(data) {
 
   container.appendChild(row);
 }
-
+//use async function with fetching the Api and collect the data
 async function fetchData() {
   try {
     let response = await fetch(`https://api.openbrewerydb.org/v1/breweries`);
